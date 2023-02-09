@@ -1,14 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.css";
+import Navbar from "navbar/Navbar"
+import Counter from "counter/Counter"
+
+import "./index.css"
 
 const App = () => (
-  <div className="container">
-    <div>Name: 02-host</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
+  <>
+    <Navbar/>
+
+    <div className="container">
+
+      <Counter/>
+    </div>
+
+  </>
 );
 ReactDOM.render(<App />, document.getElementById("app"));
