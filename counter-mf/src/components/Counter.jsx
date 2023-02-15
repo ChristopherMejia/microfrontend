@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+
 import "../styles/Counter.css"
+
+import Button from './Button';
+import { handleClick } from '../helpers/handleClick';
 
 const Counter = () => {
 
@@ -7,12 +11,17 @@ const Counter = () => {
 
   return (
     <>
-      <div className='Counter-container'>Counter</div>
-
-      <h2>Counter: {}</h2>
-
-      <button> +1 </button>
-      <button> -1 </button>
+      <div className="counter-container">        
+        <h2>Counter: { counter }</h2>
+        <Button 
+          text="+ 1"
+          handler={ () => handleClick( setCounter, counter, +1 ) }
+        />
+        <Button 
+          text="- 1"
+          handler={ () => handleClick( setCounter, counter, -1 ) }
+        /> 
+      </div>
     </>
   )
 }
