@@ -4,7 +4,9 @@ import Swal from "sweetalert2"
 const ColorList = ({colorList = []}) => {
 
   const handleCopyColor = ( color ) => {
+    //technical copied text
     navigator.clipboard.writeText(color)
+
     Swal.fire({
       position: "top-end",
       icon: "success",
