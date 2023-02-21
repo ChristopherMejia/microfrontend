@@ -1,18 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const ColorPicker = () => {
-
-  const [color, setColor] = useState("000000");
-  const handleChangeColor = (event) => {
-    setColor(event.target.value);
-  }
-
-  const handleSubmitSaveColor = (e) => {
-    e.preventDefault();
-    
-  }
-
+const ColorPicker = ( {color, handleChangeColor, handleSubmitSaveColor} ) => {
+  
   return (
+    <>
     <form onSubmit={ handleSubmitSaveColor}>
       <input 
       type="color" 
@@ -43,6 +34,7 @@ const ColorPicker = () => {
         <button type='submit' className='btn btn-success'> Guardar Color </button>
       </div>
     </form>
+    </>
   )
 }
 
