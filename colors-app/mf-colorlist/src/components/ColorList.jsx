@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
+import Swal from "sweetalert2"
 
 const ColorList = ({colorList = []}) => {
+
+  const handleCopyColor = ( color ) => {
+    navigator.clipboard.writeText(color)
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Color: ${color} Copied!`,
+      showConfirmButton: false,
+      timer: 1000,
+      timerProgressBar: true,
+    })
+  }
+
   return (
     <div className='list-group text-center'>
-      { (colorList.lenght > 0) ? 
+      { (colorList.length > 0) ?
         ( colorList.map( (color, index) => (
           <button 
             key={index} 
@@ -15,10 +29,12 @@ const ColorList = ({colorList = []}) => {
               background: color,
               color: 'white' 
             }}
+            onClick={() => handleCopyColor( color )}
           > 
             {color} 
           </button>
         ))) : (
+
           <div className='alert alert-danger' role='alert'>
             <b> Empty elements ... </b>
           </div>
