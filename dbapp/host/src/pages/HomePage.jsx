@@ -1,7 +1,14 @@
 import React from 'react'
+import Counter from 'Counter/Counter'
+import Error from '../components/Error'
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div className='text-center'>
+      <h1 className='font-bold text-lg'> Counter MF </h1>
+      <Error>
+        <Counter initialCounter={ 100 }/>
+      </Error>
+    </div>
   )
 }
