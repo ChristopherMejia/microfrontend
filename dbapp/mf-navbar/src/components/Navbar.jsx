@@ -28,7 +28,7 @@ const Navbar = () => {
                 <NavLink 
                     to="/characters" 
                     className={ ({isActive}) => activeClass(isActive) }
-                > Character </NavLink>
+                > Characters </NavLink>
 
                 <NavLink 
                     to="/about" 
