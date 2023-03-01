@@ -3,11 +3,48 @@ version: '3.0'
 services:
 
   host:
-    build: path
-  mf_cards:
-
-  mf_character_details:
-
-  mf_conter:
+    container_name: host
+    build:
+      context: ./host
+      dockerfile: Dockerfile
+    ports:
+    - "8080:8080"
+    links:
+      - mf_cards
+      - mf_character_details
+      - mf_counter
+      - mf_navbar
 
   mf_navbar:
+    container_name: navbar
+    build:
+      context: ./mf-navbar
+      dockerfile: Dockerfile
+    ports:
+    - "8081:8081"
+
+  mf_counter:
+    container_name: counter
+    build:
+      context: ./mf-counter
+      dockerfile: Dockerfile
+    ports:
+    - "8082:8082"
+
+  mf_cards:
+    container_name: cards
+    build:
+      context: ./mf-cards
+      dockerfile: Dockerfile
+    ports:
+    - "8083:8083"
+
+  mf_character_details:
+    container_name: character_details
+    build:
+      context: ./mf-character-details
+      dockerfile: Dockerfile
+    ports:
+    - "8084:8084"
+
+ 
